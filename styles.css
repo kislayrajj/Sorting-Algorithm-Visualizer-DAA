@@ -1,0 +1,32 @@
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h1 {
+  margin: 20px;
+}
+
+.controls {
+  margin-bottom: 20px;
+}
+
+#array-container {
+  display: flex;
+  align-items: flex-end;
+  width: 80%;
+  height: 300px;
+  border: 1px solid #ccc;
+}
+
+.bar {
+  background-color: #4caf50;
+  margin: 0 2px;
+  width: calc(80% / 50); /* Adjust width based on the number of bars */
+  transition: height 0.2s, background-color 0.2s;
+}
+.stopButton{
+  margin-top: 50px;
+}
