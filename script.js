@@ -4,25 +4,28 @@ let isSorting = false; // Flag to control sorting state
 
 // Function to generate a new random array and render it
 function generateArray() {
-  array = Array.from({ length: arraySize }, () => Math.floor(Math.random() * 300) + 20);
+  array = Array.from(
+    { length: arraySize },
+    () => Math.floor(Math.random() * 300) + 20
+  );
   console.log("Generated array:", array); // Debug log
   renderArray();
 }
 
 // Function to render the array as bars in the array-container
 function renderArray(highlight = []) {
-  const container = document.getElementById('array-container');
-  container.innerHTML = ''; // Clear previous bars
+  const container = document.getElementById("array-container");
+  container.innerHTML = ""; // Clear previous bars
   array.forEach((value, idx) => {
-    const bar = document.createElement('div');
-    bar.classList.add('bar');
+    const bar = document.createElement("div");
+    bar.classList.add("bar");
     bar.style.height = `${value}px`;
 
     // Highlight the bars being compared/swapped
     if (highlight.includes(idx)) {
-      bar.style.backgroundColor = 'red';
+      bar.style.backgroundColor = "red";
     } else {
-      bar.style.backgroundColor = '#4caf50'; // Default color
+      bar.style.backgroundColor = "#d4e4d8"; // Default color
     }
     container.appendChild(bar);
   });
@@ -30,12 +33,12 @@ function renderArray(highlight = []) {
 
 // Sleep function to control the speed of visualization
 function sleep(ms) {
-  return new Promise(resolve => setTimeout(resolve, ms));
+  return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
 // Get speed from the slider
 function getSpeed() {
-  const slider = document.getElementById('speed-slider');
+  const slider = document.getElementById("speed-slider");
   return 101 - slider.value;
 }
 
@@ -96,16 +99,16 @@ async function insertionSort() {
 // Function to start sorting based on selected algorithm
 function startSort() {
   if (isSorting) return; // Prevent starting a new sort if one is already in progress
-  const algorithm = document.getElementById('algorithm-select').value;
+  const algorithm = document.getElementById("algorithm-select").value;
   console.log("Start Sort button clicked"); // Debug log
   switch (algorithm) {
-    case 'bubble':
+    case "bubble":
       bubbleSort();
       break;
-    case 'selection':
+    case "selection":
       selectionSort();
       break;
-    case 'insertion':
+    case "insertion":
       insertionSort();
       break;
     default:

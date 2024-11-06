@@ -3,6 +3,35 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-image: radial-gradient(
+    circle at top right,
+    rgb(49, 157, 235) 0%,
+    rgb(49, 157, 235) 13%,
+    rgb(76, 166, 234) 13%,
+    rgb(76, 166, 234) 23%,
+    rgb(103, 176, 232) 23%,
+    rgb(103, 176, 232) 33%,
+    rgb(130, 185, 231) 33%,
+    rgb(130, 185, 231) 46%,
+    rgb(156, 194, 230) 46%,
+    rgb(156, 194, 230) 48%,
+    rgb(183, 203, 229) 48%,
+    rgb(183, 203, 229) 63%,
+    rgb(210, 213, 227) 63%,
+    rgb(210, 213, 227) 83%,
+    rgb(237, 222, 226) 83%,
+    rgb(237, 222, 226) 100%
+  );
+  /* background-image: url('path/to/your-image.jpg');  */
+  background-size: 100%; /* Cover will scale the image to cover the entire viewport */
+  background-repeat: no-repeat; /* Prevents the image from repeating */
+  background-position: center;
+  height: 100vh;
+  transition: background-size 0.8s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+body:hover {
+  background-size: 120%;
 }
 
 h1 {
@@ -17,16 +46,60 @@ h1 {
   display: flex;
   align-items: flex-end;
   width: 80%;
-  height: 300px;
-  border: 1px solid #ccc;
+  height: 350px;
+  /* border: 1px solid rgb(144, 144, 231); */
+  border-radius: 10px;
+  background-image: radial-gradient(
+    circle at top right,
+    rgb(13, 141, 190) 0%,
+    rgb(13, 141, 190) 46%,
+    rgb(22, 153, 204) 46%,
+    rgb(22, 153, 204) 49%,
+    rgb(31, 166, 217) 49%,
+    rgb(31, 166, 217) 52%,
+    rgb(40, 178, 231) 52%,
+    rgb(40, 178, 231) 54%,
+    rgb(49, 190, 244) 54%,
+    rgb(49, 190, 244) 100%
+  );
+  background-size: 100%;
+  transition: background-size 0.8s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+#array-container:hover {
+  background-size: 120%;
 }
 
 .bar {
-  background-color: #4caf50;
+  background-color: #d4e4d8;
   margin: 0 2px;
   width: calc(80% / 50); /* Adjust width based on the number of bars */
   transition: height 0.2s, background-color 0.2s;
 }
-.stopButton{
+.stopButton {
   margin-top: 50px;
+}
+
+button {
+  padding: 6px 6px;
+  background-color: #0bbdca;
+  border-radius: 5px;
+  color: white;
+  border: none;
+  cursor: pointer;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+button:hover {
+  background-color: #137396;
+}
+
+select {
+  padding: 5px 5px;
+  background-color: #44c5ce;
+  border-radius: 5px;
+  color: white;
+  border: none;
+  cursor: pointer;
 }
